@@ -1,3 +1,5 @@
 <?php
-echo "webinse todolist";
+include 'router.php';
+
+(new Router)->call();
  ?>
