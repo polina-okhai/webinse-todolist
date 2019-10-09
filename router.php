@@ -6,25 +6,25 @@ class Router
   {
     switch ($_SERVER['REQUEST_URI']) {
   case '/':
-    echo 'index';
-    break;
-  case '/new':
-    echo 'new';
-    break;
-  case '/create':
-    echo 'create';
-    break;
-  case '/edit/id':
-    echo 'edit';
-    break;
-  case '/update':
-    echo 'update';
-    break;
-  case '/destroy':
-    echo 'destroy';
+    (new UsersController)->index();
     break;
   case '/id':
-    echo 'show';
+    (new UsersController)->show();
+    break;
+  case '/new':
+    (new UsersController)->new();
+    break;
+  case '/create':
+    (new UsersController)->create();
+    break;
+  case '/edit/id':
+    (new UsersController)->edit();
+    break;
+  case '/update':
+    (new UsersController)->update();
+    break;
+  case '/destroy':
+    (new UsersController)->destroy();
     break;
 
   default:
