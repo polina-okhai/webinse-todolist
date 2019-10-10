@@ -1,10 +1,12 @@
 <?php
+
+
   class UsersController
   {
     public function index()
     {
-      echo 'index';
-
+      echo file_get_contents('views/index.html');
+      // echo 'index';
     }
     public function show()
     {
@@ -12,7 +14,7 @@
     }
     public function new()
     {
-      echo 'new';
+      echo file_get_contents('views/new.html');
     }
     public function create()
     {
@@ -20,7 +22,7 @@
     }
     public function edit()
     {
-      echo 'edit';
+      echo file_get_contents('views/edit.html');
     }
     public function update()
     {
