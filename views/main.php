@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,45 +37,11 @@
                   </th>
                 </tr>
               </tbody>
-              <tbody>
-                <tr>
-                  <th>Andrey</th>
-                  <th>Yagodka</th>
-                  <th>andrey.yagodka@gmail.com</th>
-                  <th>
-                    <button type="button" class="btn btn-success">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </th>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <th>John</th>
-                  <th>Doe</th>
-                  <th>john.doe@i.ua</th>
-                  <th>
-                    <button type="button" class="btn btn-success">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </th>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <th>Ann</th>
-                  <th>Smith</th>
-                  <th>ann99.smith@gmail.com</th>
-                  <th>
-                    <button type="button" class="btn btn-success">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </th>
-                </tr>
-              </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
