@@ -9,13 +9,16 @@
   <title>Project</title>
 </head>
 <body>
+  <?php session_start(); ?>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-8 col-md-offset-2">
           <div class="panel panel-default">
             <div class="panel-heading">Users
-              <button type="button" class="btn btn-success pull-right">Success</button>
+              <form method="get" action="http://new-project.com/new">
+                <button type="submit" class="btn btn-success pull-right">New</button>
+              </form>
             </div>
             <table class="table">
               <thead>
@@ -27,15 +30,29 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th>Polina</th>
-                  <th>Okhai</th>
-                  <th>polina.okhai@gmail.com</th>
-                  <th>
-                    <button type="button" class="btn btn-success">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </th>
-                </tr>
+                <?php foreach ($_SESSION['users'] as $user): ?>
+                  <tr>
+                    <th>
+                      <?php echo $user['first_name']; ?>
+                    </th>
+                    <th>
+                      <?php echo $user['second_name']; ?>
+                    </th>
+                    <th>
+                      <?php echo $user['second_name']; ?>
+                    </th>
+                    <th>
+                      <form method="post" action="http://new-project.com/edit">
+                        <input type="hidden" name="id" value=<?php echo $user['id']; ?>
+                        <button type="submit" class="btn btn-success">Edit</button>
+                      </form>
+                      <form method="post" action="http://new-project.com/destroy">
+                        <input type="hidden" name="id" value=<?php echo $user['id']; ?>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                    </th>
+                  </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>
@@ -43,5 +60,6 @@
       </div>
     </div>
   </div>
+  <?php session_destroy(); ?>
 </body>
 </html>

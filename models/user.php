@@ -17,6 +17,7 @@ class User
     $result = mysqli_query($this->link, $query);
     while($row = $result->fetch_assoc()){
       $users[] = [
+        'id' => $row['id'],
         'first_name' => $row['first_name'],
         'second_name' => $row['second_name'],
         'email' => $row['email']
@@ -31,6 +32,7 @@ class User
     $result = mysqli_query($this->link, $query);
     $row = $result->fetch_assoc();
     $user = [
+      'id' => $row['id'],
       'first_name' => $row['first_name'],
       'second_name' => $row['second_name'],
       'email' => $row['email']
@@ -40,7 +42,7 @@ class User
 
   public function create($first_name, $second_name, $email)
   {
-    $query = "INSERT INTO users(first_name, second_name, email) VALUES({$first_name}, {$second_name}, {$email})";
+    $query = "INSERT INTO users(first_name, second_name, email) VALUES('{$first_name}', '{$second_name}', '{$email}')";
     mysqli_query($this->link, $query);
   }
 

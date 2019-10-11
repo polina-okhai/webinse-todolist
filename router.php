@@ -17,7 +17,7 @@ class Router
   case '/create':
     (new UsersController)->create();
     break;
-  case '/edit/id':
+  case '/edit':
     (new UsersController)->edit();
     break;
   case '/update':

@@ -4,32 +4,54 @@ class UsersController
   public function index()
   {
     $_SESSION['users'] = (new User)->all();
+
     echo file_get_contents('views/main.php');
   }
-  public function show()
-  {
-    echo 'show';
-  }
+
   public function new()
   {
     echo file_get_contents('views/new.php');
   }
+
   public function create()
   {
-    (new User)->create('test_first_name', 'test_second_name', 'test_email');
+    $first_name = $_POST['first_name'];
+    $second_name = $_POST['second_name'];
+    $email = $_POST['email'];
+
+    (new User)->create($first_name, $second_name, $email);
+
+    header('Location: http://new-project.com');
   }
+
   public function edit()
   {
-    (new User)->findById(1);
+    $id = $_POST['id'];
+
+    $_SESSION['user'] = (new User)->findById($id);
+
     echo file_get_contents('views/edit.php');
   }
+
   public function update()
   {
-    (new User)->update('test_first_name', 'test_second_name', 'test_email', 1);
+    $id = $_POST['id'];
+    $first_name = $_POST['first_name'];
+    $second_name = $_POST['second_name'];
+    $email = $_POST['email'];
+
+    (new User)->update($first_name, $second_name, $email, $id);
+
+    header('Location: http://new-project.com');
   }
+
   public function destroy()
   {
-    (new User)->delete(1);
+    $id = $_POST['id'];
+
+    (new User)->delete($id);
+
+    header('Location: http://new-project.com');
   }
 }
 ?>
